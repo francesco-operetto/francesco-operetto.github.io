@@ -154,17 +154,39 @@ footer p+p{margin-top:6px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-/* Selettore lingua */
+/* Selettore lingua: piccolo controllo segmentato, più visibile ma coerente con il layout */
 .lang-switch{
-  position:absolute;top:0;right:26px;
-  display:flex;align-items:center;gap:7px;
+  position:absolute;top:-3px;right:26px;
+  display:inline-flex;align-items:center;gap:0;
+  padding:2px;
+  border:1px solid var(--rule);
+  border-radius:999px;
+  background:color-mix(in srgb,var(--card) 88%,transparent);
   font-family:'IBM Plex Mono',monospace;font-size:11.8px;
   letter-spacing:.05em;color:var(--ink-soft);
 }
-.lang-switch a{text-decoration:none;color:var(--teal-deep)}
-.lang-switch a:hover{color:var(--ink)}
-.lang-switch [aria-current="page"]{color:var(--ink);font-weight:500}
-.lang-switch .sep{color:var(--rule)}
+.lang-switch a,
+.lang-switch [aria-current="page"]{
+  min-width:34px;
+  padding:4px 8px;
+  border-radius:999px;
+  text-align:center;
+  line-height:1.2;
+}
+.lang-switch a{
+  text-decoration:none;
+  color:var(--teal-deep);
+}
+.lang-switch a:hover{
+  background:var(--paper-dim);
+  color:var(--ink);
+}
+.lang-switch [aria-current="page"]{
+  background:var(--teal-deep);
+  color:var(--paper);
+  font-weight:600;
+}
+.lang-switch .sep{display:none}
 @media(max-width:650px){
   .lang-switch{right:26px}
 }
