@@ -174,14 +174,38 @@
 
 <script>
 (() => {
+  const materialPanels = [...document.querySelectorAll('details.material-group[id]')];
+
   const openPanelFromHash = () => {
     if (!window.location.hash) return;
-    const id = window.location.hash.slice(1);
+    const id = decodeURIComponent(window.location.hash.slice(1));
     const target = document.getElementById(id);
     if (target?.matches('details.material-group')) {
       target.open = true;
     }
   };
+
+  const setHashWithoutScrolling = (id) => {
+    const url = new URL(window.location.href);
+    url.hash = id;
+    history.replaceState(null, '', url);
+  };
+
+  const clearHashWithoutScrolling = () => {
+    const url = new URL(window.location.href);
+    url.hash = '';
+    history.replaceState(null, '', url);
+  };
+
+  materialPanels.forEach((panel) => {
+    panel.addEventListener('toggle', () => {
+      if (panel.open) {
+        setHashWithoutScrolling(panel.id);
+      } else if (window.location.hash === `#${panel.id}`) {
+        clearHashWithoutScrolling();
+      }
+    });
+  });
 
   openPanelFromHash();
   window.addEventListener('hashchange', openPanelFromHash);
