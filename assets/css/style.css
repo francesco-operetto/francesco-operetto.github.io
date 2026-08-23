@@ -146,7 +146,7 @@ footer p{margin:0;color:var(--ink-soft);font-family:'IBM Plex Mono',monospace;fo
 footer p+p{margin-top:6px}
 
 @media(max-width:650px){
-  .hero{padding:58px 0 40px}.hero-sub{padding:46px 0 36px}main{padding-top:42px}
+  .hero{padding:36px 0 40px}.hero-sub{padding:34px 0 36px}main{padding-top:42px}
   .contact-grid{grid-template-columns:1fr}.file-row{grid-template-columns:1fr}.dl{justify-self:start}
   .pending{align-items:flex-start}.pending small{white-space:normal;text-align:right}
   .thesis-card{flex-direction:column;align-items:flex-start}
@@ -188,5 +188,9 @@ footer p+p{margin-top:6px}
 }
 .lang-switch .sep{display:none}
 @media(max-width:650px){
-  .lang-switch{right:26px}
+  .lang-switch{
+    position:static;
+    width:max-content;
+    margin:0 0 16px auto;
+  }
 }
