@@ -110,6 +110,7 @@ h3{font-size:1.12rem;margin:0}
 .file-desc{color:var(--ink-soft);font-size:.86rem;margin-top:2px;max-width:64ch}
 .file-meta{margin-top:5px;color:var(--ink-soft);font-family:'IBM Plex Mono',monospace;font-size:11.6px;line-height:1.45}
 .dl,.dl-link{font-family:'IBM Plex Mono',monospace;font-size:12.3px;white-space:nowrap}
+.file-actions{display:flex;flex-direction:column;gap:5px;align-items:flex-end;justify-self:end}
 .pending{display:flex;justify-content:space-between;gap:18px;align-items:baseline;padding:15px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .pending-title{font-family:'Spectral',serif;font-weight:600;font-size:1.18rem;line-height:1.3}
 .pending small{font-family:'IBM Plex Mono',monospace;color:var(--ink-soft);font-size:11.8px;white-space:nowrap}
@@ -147,7 +148,7 @@ footer p+p{margin-top:6px}
 
 @media(max-width:650px){
   .hero{padding:36px 0 40px}.hero-sub{padding:34px 0 36px}main{padding-top:42px}
-  .contact-grid{grid-template-columns:1fr}.file-row{grid-template-columns:1fr}.dl{justify-self:start}
+  .contact-grid{grid-template-columns:1fr}.file-row{grid-template-columns:1fr}.dl{justify-self:start}.file-actions{align-items:flex-start;justify-self:start}
   .pending{align-items:flex-start}.pending small{white-space:normal;text-align:right}
   .thesis-card{flex-direction:column;align-items:flex-start}
   .files{padding-left:9px}
